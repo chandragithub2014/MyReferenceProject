@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_mvvm"
+        android:icon="@mipmap/ic_mvvm"
+        android:title="MVVM"
+        android:iconTint="@color/cg_text_light"
+        app:showAsAction="always|withText"
+
+        />
+    <item
+        android:id="@+id/nav_clean"
+        android:icon="@mipmap/ic_clean"
+        android:title="Clean Architecture"
+        app:showAsAction="always|withText"
+        android:iconTint="@color/cg_text_light"
+        android:visible="false"/>
+    <item
+        android:id="@+id/nav_mvp"
+        android:icon="@mipmap/ic_mvp"
+        android:title="MVP"
+        app:showAsAction="always|withText"
+        android:iconTint="@color/cg_text_light"
+        android:visible="false" />
+
+</menu>
+
+
+    <!--android:iconTint="@color/cg_text_light"
+    android:visible="false"
+    -->

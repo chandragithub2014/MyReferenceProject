@@ -1,0 +1,6 @@
+include ':features:bindingfeature'
+include ':libraries:baseuilibrary'
+include ':features:mvvmfeature'
+include ':libraries:baselibrary'
+include ':myreferenceapp'
+rootProject.name = "MyReferenceProject"

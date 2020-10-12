@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="JetPack">
+        <menu>
+            <item
+                android:id="@+id/data_binding"
+                android:title="DataBinding" />
+            <item
+                android:id="@+id/room_db"
+                 android:title="Room DB" />
+            <item
+                android:id="@+id/nav_graph"
+                android:title="Navigation" />
+
+            <item
+                android:id="@+id/hilt_demo"
+                android:title="Hilt" />
+
+            <item
+                android:id="@+id/coroutine_demo"
+                android:title="Coroutines" />
+        </menu>
+
+    </item>
+
+    <item android:title="Forms">
+        <menu>
+            <item
+                android:id="@+id/login_forms"
+                android:title="Login" />
+            <item
+                android:id="@+id/register_forms"
+                android:title="Registration" />
+
+        </menu>
+
+    </item>
+</menu>

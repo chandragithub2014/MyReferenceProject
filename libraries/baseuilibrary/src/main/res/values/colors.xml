@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="colorPrimary">@color/cg_interactive_elements</color>
+        <color name="colorPrimaryDark">@color/cg_header_navigation</color>
+        <color name="colorAccent">@color/cg_background</color>
+        <color name="primaryTextColor">@color/cg_text_light</color>
+        <color name="cg_header_navigation">#66676D</color>
+        <color name="cg_text_dark">#424348</color>
+        <color name="cg_text_light">#ffffff</color>
+        <color name="cg_interactive_elements">#00AB9E</color>
+        <color name="cg_hover_state"> #00887B</color>
+        <color name="cg_placeholder">#B3B5BB</color>
+        <color name="cg_background">#F2F2F2</color>
+        <color name="cg_error">#E62D32</color>
+        <color name="cg_notification_success">#009A3E</color>
+        <color name="cg_notification_success_light">#D9F0E2</color>
+        <color name="cg_notification_warning">#DC8633</color>
+        <color name="cg_notification_warning_light">#FAEDE1</color>
+        <color name="cg_notification_information">#67A9F6</color>
+        <color name="cg_notification_information_light">#E8F2FE</color>
+        <color name="cg_environment_test">#719949</color>
+        <color name="cg_environment_syst">#9B3B5D</color>
+        <color name ="cg_tab_text_color">#B2E5E1</color>
+        <color name = "cg_open_header_back_ground_grey">#D7D7D7</color>
+        <color name = "over_lay_grey_color">#EEEFF6</color>
+        <color name = "lemon_lime">#e3ff00</color>
+
+
+</resources>

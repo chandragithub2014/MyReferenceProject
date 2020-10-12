@@ -1,0 +1,9 @@
+<resources>
+    <string name="preference">Preferences</string>
+    <string name="content_description_more">Preferences</string>
+    <string name="title_mvvm">MVVM</string>
+    <string name="title_binding">DataBinding</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

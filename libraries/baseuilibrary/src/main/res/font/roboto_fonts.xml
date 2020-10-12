@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+        <font
+            app:font="@font/roboto_medium"
+            app:fontStyle="normal"
+            app:fontWeight="500"
+            android:font="@font/roboto_medium"
+            android:fontStyle="normal"
+            android:fontWeight="500"/>
+
+        <font
+            app:font="@font/roboto"
+            app:fontStyle="normal"
+            app:fontWeight="400"
+            android:font="@font/roboto"
+            android:fontStyle="normal"
+            android:fontWeight="400"/>
+
+        <font
+            app:font="@font/roboto_italic"
+            app:fontStyle="italic"
+            app:fontWeight="400"
+            android:font="@font/roboto_italic"
+            android:fontStyle="normal"
+            android:fontWeight="100"/>
+
+        <font
+            app:font="@font/roboto_bold"
+            app:fontStyle="normal"
+            app:fontWeight="700"
+            android:font="@font/roboto_bold"
+            android:fontStyle="normal"
+            android:fontWeight="300"/>
+
+        <font
+            app:font="@font/roboto_light"
+            app:fontStyle="normal"
+            app:fontWeight="300"
+            android:font="@font/roboto_light"
+            android:fontStyle="normal"
+            android:fontWeight="300" />
+
+
+    <!--
+
+    https://johncodeos.com/how-to-add-custom-fonts-in-your-android-app-using-kotlin/
+    https://fonts.google.com/specimen/Roboto#standard-styles
+      <font
+            app:font="@font/roboto_black"
+            app:fontStyle="normal"
+            app:fontWeight="700"
+            android:font="@font/roboto_black"
+            android:fontStyle="normal"
+            android:fontWeight="700"/>
+
+ <font
+         app:font="@font/roboto_thin"
+         app:fontStyle="normal"
+         app:fontWeight="500"
+         android:font="@font/roboto_bold"
+         android:fontStyle="normal"
+         android:fontWeight="500"/>-->
+
+
+
+
+</font-family>
