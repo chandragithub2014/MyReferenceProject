@@ -14,12 +14,13 @@
     </dist:module>
 
     <application>
+        <activity android:name=".viewbinding.views.LoginViewBindingActivity"></activity>
         <activity android:name=".DataBindingActivity">
             <intent-filter>
                 <action android:name="com.ref.bindingfeature.open" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
 

@@ -6,6 +6,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -68,7 +69,11 @@ inline fun <reified T : Any> Context.launchActivity(isClearBackStack:Boolean = f
     }
     startActivity(intent)
 }
-
-
+fun Any.toastShort(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
+    return Toast.makeText(context, this.toString(), duration).apply { show() }
+}
+fun Any.toastLong(context: Context, duration: Int = Toast.LENGTH_LONG): Toast {
+    return Toast.makeText(context, this.toString(), duration).apply { show() }
+}
 //https://medium.com/@dev.malwinder/smart-kotlin-function-for-launching-activities-50da9e04bb59
 //https://blog.mindorks.com/what-are-reified-types-in-kotlin

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".viewbinding.views.LoginViewBindingActivity">
+
+<TextView
+    android:id="@+id/login_title"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:capitalize="words"
+    android:gravity="center"
+    android:text="Login ViewBinding Demo"
+    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+    android:textColor="#E91E63"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.532"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.272" />
+
+<EditText
+    android:id="@+id/username_ed"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:text=""
+    android:hint="Enter User Name"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/login_title" />
+
+<EditText
+    android:id="@+id/password_ed"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:ems="10"
+    android:inputType="textPassword"
+    android:text=""
+    android:hint="Enter Password"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/username_ed" />
+
+<Button
+    android:id="@+id/login_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="8dp"
+    android:text="Login"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/password_ed" />
+</androidx.constraintlayout.widget.ConstraintLayout>

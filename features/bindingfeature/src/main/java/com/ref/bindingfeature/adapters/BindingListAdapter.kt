@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ref.bindingfeature.R
+import com.ref.bindingfeature.interfaces.BindingListener
 import com.ref.bindingfeature.model.BindingModel
 import kotlinx.android.synthetic.main.binding_list_item.view.*
 
-class BindingListAdapter(var context: Context, var bindingList : MutableList<BindingModel>) : RecyclerView.Adapter<BindingListAdapter.BindingViewHolder>() {
+class BindingListAdapter(var context: Context, var bindingList : MutableList<BindingModel>,var bindingListener: BindingListener) : RecyclerView.Adapter<BindingListAdapter.BindingViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingListAdapter.BindingViewHolder =  BindingViewHolder(
         LayoutInflater.from(parent.context).inflate(
@@ -30,7 +31,7 @@ class BindingListAdapter(var context: Context, var bindingList : MutableList<Bin
            bindingItem.text = bindingModel.bindingType
            parent.setOnClickListener {
                println("Clicked on ${bindingItem.text}")
-
+              bindingListener.onBindTemplateClick(bindingItem.text as String)
            }
        }
    }

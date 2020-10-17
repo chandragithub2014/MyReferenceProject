@@ -10,13 +10,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import colruyt.android.dsa.rayon.viewmodel.BindingViewModelFactory
+import com.ref.baselibrary.navigator.openActivity
 import com.ref.bindingfeature.R
 import com.ref.bindingfeature.adapters.BindingListAdapter
+import com.ref.bindingfeature.interfaces.BindingListener
 import com.ref.bindingfeature.model.BindingModel
+import com.ref.bindingfeature.viewbinding.views.LoginViewBindingActivity
 import com.ref.bindingfeature.viewmodel.BindingViewModel
 import kotlinx.android.synthetic.main.binding_list_layout.*
 
-class BindingListFragment : Fragment() {
+class BindingListFragment : Fragment() ,BindingListener{
 
 
     lateinit var bindingViewModel: BindingViewModel
@@ -58,12 +61,19 @@ class BindingListFragment : Fragment() {
 
 
     private fun populateAdapter(bindingList : MutableList<BindingModel>){
-        val bindingListAdapter = BindingListAdapter(this@BindingListFragment.requireActivity(),bindingList)
+        val bindingListAdapter = BindingListAdapter(this@BindingListFragment.requireActivity(),bindingList,this)
         val layoutManager = LinearLayoutManager(context)
 
         binding_rv.layoutManager = layoutManager
         binding_rv.adapter = bindingListAdapter
         binding_rv.addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         bindingListAdapter.notifyDataSetChanged()
+    }
+
+    override fun onBindTemplateClick(template: String) {
+        when(template){
+            "ViewBinding" -> activity?.openActivity(LoginViewBindingActivity::class.java)
+                else -> activity?.openActivity(LoginViewBindingActivity::class.java)
+        }
     }
 }
