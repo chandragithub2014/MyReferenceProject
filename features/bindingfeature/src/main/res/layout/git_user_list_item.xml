@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel.GitUserModelItem"/>
+
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,19 +33,20 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
-        android:text="TextView"
+        android:text="@{user.login}"
         app:layout_constraintStart_toEndOf="@+id/git_user_avatar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/user_type_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:layout_marginRight="10dp"
-        android:text="TextView"
+        android:text="@{user.type}"
         app:layout_constraintStart_toEndOf="@+id/git_user_avatar"
         app:layout_constraintTop_toBottomOf="@+id/git_user_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
