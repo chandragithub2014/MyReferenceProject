@@ -10,12 +10,14 @@ import com.ref.bindingfeature.databinding.GitUserListItemBinding
 import com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel
 import com.ref.bindingfeature.model.BindingModel
 
+
 class GitUserAdapter(var context: Context, var gitUserList: GitUserModel) : RecyclerView.Adapter<GitUserAdapter.GitUserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitUserViewHolder {
-       var gitUserListItemBinding = DataBindingUtil.inflate<GitUserListItemBinding>(
+       var gitUserListItemBinding : GitUserListItemBinding = DataBindingUtil.inflate(
            LayoutInflater.from(parent.context),
            R.layout.git_user_list_item, parent, false)
+
         return  GitUserViewHolder(gitUserListItemBinding)
     }
 
@@ -27,7 +29,7 @@ class GitUserAdapter(var context: Context, var gitUserList: GitUserModel) : Recy
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(gitUser: GitUserModel.GitUserModelItem){
-            binding.user = gitUser
+            binding.gituser = gitUser
             }
 
 

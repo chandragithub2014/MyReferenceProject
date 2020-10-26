@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import colruyt.android.dsa.rayon.viewmodel.BindingViewModelFactory
 import com.ref.baselibrary.navigator.openActivity
+import com.ref.baselibrary.navigator.replaceFragment
 import com.ref.bindingfeature.R
 import com.ref.bindingfeature.adapters.BindingListAdapter
+import com.ref.bindingfeature.databindingrecyclerview.view.GitUserFragment
 import com.ref.bindingfeature.interfaces.BindingListener
 import com.ref.bindingfeature.model.BindingModel
 import com.ref.bindingfeature.viewbinding.views.LoginViewBindingActivity
@@ -24,6 +26,7 @@ class BindingListFragment : Fragment() ,BindingListener{
 
     lateinit var bindingViewModel: BindingViewModel
     lateinit var bindingListView : View
+    private var mContainer : Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initViewModel()
@@ -36,6 +39,7 @@ class BindingListFragment : Fragment() ,BindingListener{
         savedInstanceState: Bundle?
     ): View? {
         bindingListView =  inflater.inflate(R.layout.binding_list_layout, container, false)
+        mContainer = container?.id?:-1
         return  bindingListView
     }
 
@@ -73,7 +77,14 @@ class BindingListFragment : Fragment() ,BindingListener{
     override fun onBindTemplateClick(template: String) {
         when(template){
             "ViewBinding" -> activity?.openActivity(LoginViewBindingActivity::class.java)
+            "DataBindingList" -> launchGitUserDataBindingFragment()
                 else -> activity?.openActivity(LoginViewBindingActivity::class.java)
         }
+    }
+
+
+    private fun launchGitUserDataBindingFragment(){
+
+        activity?.replaceFragment(GitUserFragment(),mContainer)
     }
 }

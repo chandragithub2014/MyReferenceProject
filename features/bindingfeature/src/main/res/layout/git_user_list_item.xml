@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="user"
+            name="gituser"
             type="com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel.GitUserModelItem"/>
 
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
 
     <ImageView
         android:id="@+id/git_user_avatar"
@@ -33,7 +29,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
-        android:text="@{user.login}"
+        android:text="@{gituser.login}"
         app:layout_constraintStart_toEndOf="@+id/git_user_avatar"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +40,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:layout_marginRight="10dp"
-        android:text="@{user.type}"
+        android:text="@{gituser.type}"
         app:layout_constraintStart_toEndOf="@+id/git_user_avatar"
         app:layout_constraintTop_toBottomOf="@+id/git_user_name" />
 

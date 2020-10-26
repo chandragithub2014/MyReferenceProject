@@ -21,6 +21,7 @@ class GitUserViewModel(private val dispatcher: CoroutineDispatcher, private val 
                 val userResponseFromRepository = userRepository.fetchUsers()
                 if(userResponseFromRepository.isSuccessful){
                     gitUserMutableLiveData.postValue(userResponseFromRepository.body())
+                    loading.postValue(false)
                 }else{
                     println("Received Response::::")
                     println("Response code ${userResponseFromRepository.code()}")

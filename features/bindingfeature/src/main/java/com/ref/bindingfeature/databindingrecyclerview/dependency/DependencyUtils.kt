@@ -7,7 +7,12 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.security.SecureRandom
+import java.security.cert.CertificateException
+import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.*
+
 
 object DependencyUtils {
 
@@ -32,7 +37,9 @@ object DependencyUtils {
 
      private fun provideRetrofitInstance(): Retrofit {
         return Retrofit.Builder().baseUrl(provideNetworkURL()).client(provideOKHttp(
-            provideHttpLogger())).addConverterFactory(GsonConverterFactory.create()).build()
+            provideHttpLogger())).addConverterFactory(GsonConverterFactory.create())
+            .client(UnsafeOkHttpClient.getUnsafeOkHttpClient().build())
+            .build()
 
     }
 
@@ -42,6 +49,5 @@ object DependencyUtils {
     }
 
     fun provideUserRepository() = UserRepository(provideAPIService())
-
 
 }
