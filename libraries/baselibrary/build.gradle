@@ -55,4 +55,6 @@ dependencies {
 
     //For viewModels
      api "androidx.fragment:fragment-ktx:$fragment_version"
+     api 'com.github.bumptech.glide:glide:4.11.0'
+     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }

@@ -10,7 +10,7 @@ object DependencyUtils {
         bindingList.add(bindingModel)
         bindingModel = BindingModel("DataBindingForm")
         bindingList.add(bindingModel)
-        bindingModel = BindingModel("DataBindingList")
+        bindingModel = BindingModel("DataBindingList/Detail")
         bindingList.add(bindingModel)
         bindingModel = BindingModel("RoomDataBinding")
         bindingList.add(bindingModel)

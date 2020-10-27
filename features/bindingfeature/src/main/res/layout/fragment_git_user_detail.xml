@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="gituser"
+            type="com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel.GitUserModelItem"/>
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".databindingrecyclerview.view.GitUserDetailFragment">
+
+
+    <ImageView
+        android:id="@+id/login_avatar"
+        android:layout_width="407dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:imageUrl="@{gituser.avatar_url}"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_avatar"
+        android:textSize="20sp"
+        android:text="@{gituser.login}"
+        android:textColor="@android:color/holo_red_dark"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

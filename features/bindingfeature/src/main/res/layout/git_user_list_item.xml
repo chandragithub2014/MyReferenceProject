@@ -10,7 +10,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="10dp"
+    android:id="@+id/git_user_item_layout">
 
     <ImageView
         android:id="@+id/git_user_avatar"
@@ -20,7 +21,8 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        app:imageUrl="@{gituser.avatar_url}"/>
 
     <TextView
         android:id="@+id/git_user_name"

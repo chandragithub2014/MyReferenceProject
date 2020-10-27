@@ -11,10 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import colruyt.android.dsa.rayon.viewmodel.BindingViewModelFactory
+import com.ref.baselibrary.navigator.replaceFragment
 import com.ref.bindingfeature.R
 import com.ref.bindingfeature.adapters.BindingListAdapter
 import com.ref.bindingfeature.databinding.FragmentGitUserBinding
 import com.ref.bindingfeature.databindingrecyclerview.adapter.GitUserAdapter
+import com.ref.bindingfeature.databindingrecyclerview.interfaces.ItemClickListener
 import com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel
 import com.ref.bindingfeature.databindingrecyclerview.viewmodel.GitUserViewModel
 import com.ref.bindingfeature.databindingrecyclerview.viewmodel.GitUsersViewModelFactory
@@ -33,13 +35,14 @@ private const val ARG_PARAM2 = "param2"
  * Use the [GitUserFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GitUserFragment : Fragment() {
+class GitUserFragment : Fragment(),ItemClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     lateinit var gitUserFragmentBinding:FragmentGitUserBinding
     lateinit var  gitUserBindingView:View
     lateinit var gitUserViewModel:GitUserViewModel
+    private var mContainer : Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -57,6 +60,7 @@ class GitUserFragment : Fragment() {
         gitUserFragmentBinding =     DataBindingUtil.inflate(inflater,R.layout.fragment_git_user,container,false)
         gitUserFragmentBinding.lifecycleOwner = this
         gitUserBindingView = gitUserFragmentBinding.root
+        mContainer = container?.id?:-1
         return gitUserBindingView
     }
 
@@ -94,12 +98,22 @@ class GitUserFragment : Fragment() {
     }
 
     private fun populateAdapter(gitUserList : GitUserModel ){
-        val gitUserListAdapter = GitUserAdapter(this@GitUserFragment.requireActivity(),gitUserList)
+        val gitUserListAdapter = GitUserAdapter(this@GitUserFragment.requireActivity(),gitUserList,this)
         val layoutManager = LinearLayoutManager(context)
         git_user_list.layoutManager = layoutManager
         git_user_list.adapter = gitUserListAdapter
         git_user_list.addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         gitUserListAdapter.notifyDataSetChanged()
+    }
+
+    private fun launchDetailFragment( selectedUser:GitUserModel.GitUserModelItem){
+        var gitUserDetailFragment = GitUserDetailFragment()
+        var bundle = Bundle()
+        bundle.putParcelable("gitUserInfo",selectedUser)
+        gitUserDetailFragment.arguments = bundle
+        activity?.replaceFragment(gitUserDetailFragment,mContainer)
+
+
     }
     companion object {
         /**
@@ -119,5 +133,9 @@ class GitUserFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun gitUserClicked(clickedUser: GitUserModel.GitUserModelItem) {
+        launchDetailFragment(clickedUser)
     }
 }

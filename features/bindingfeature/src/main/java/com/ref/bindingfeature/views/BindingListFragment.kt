@@ -77,7 +77,7 @@ class BindingListFragment : Fragment() ,BindingListener{
     override fun onBindTemplateClick(template: String) {
         when(template){
             "ViewBinding" -> activity?.openActivity(LoginViewBindingActivity::class.java)
-            "DataBindingList" -> launchGitUserDataBindingFragment()
+            "DataBindingList/Detail" -> launchGitUserDataBindingFragment()
                 else -> activity?.openActivity(LoginViewBindingActivity::class.java)
         }
     }

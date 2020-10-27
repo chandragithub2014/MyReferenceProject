@@ -1,6 +1,10 @@
 package com.ref.bindingfeature.databindingrecyclerview.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 class GitUserModel : ArrayList<GitUserModel.GitUserModelItem>(){
+    @Parcelize
     data class GitUserModelItem(
         val avatar_url: String, // https://avatars2.githubusercontent.com/u/46?v=4
         val events_url: String, // https://api.github.com/users/bmizerany/events{/privacy}
@@ -20,5 +24,5 @@ class GitUserModel : ArrayList<GitUserModel.GitUserModelItem>(){
         val subscriptions_url: String, // https://api.github.com/users/bmizerany/subscriptions
         val type: String, // User
         val url: String // https://api.github.com/users/bmizerany
-    )
+    ) : Parcelable
 }
