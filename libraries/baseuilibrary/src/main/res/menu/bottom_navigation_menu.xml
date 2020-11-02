@@ -4,7 +4,7 @@
     <item
         android:id="@+id/nav_mvvm"
         android:icon="@mipmap/ic_mvvm"
-        android:title="MVVM"
+        android:title="Coroutines"
         android:iconTint="@color/cg_text_light"
         app:showAsAction="always|withText"
 
