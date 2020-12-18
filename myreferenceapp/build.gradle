@@ -28,7 +28,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dynamicFeatures = [':features:mvvmfeature', ':features:bindingfeature']
+    dynamicFeatures = [':features:mvvmfeature', ':features:bindingfeature', ':features:roomdboprs']
 }
 
 dependencies {

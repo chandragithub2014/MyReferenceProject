@@ -4,7 +4,7 @@
     <data>
         <variable
             name="gituser"
-            type="com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel.GitUserModelItem"/>
+            type="com.ref.bindingfeature.databindinglistdetailnetwork.model.GitUserModel.GitUserModelItem"/>
 
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout

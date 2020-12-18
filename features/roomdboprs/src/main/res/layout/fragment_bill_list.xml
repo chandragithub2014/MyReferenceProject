@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.BillListFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_bill_fl_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="#8A2BE2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+       android:gravity="center"
+        android:text="Bill List"
+        android:textColor="@android:color/white"
+        android:background="#8A2BE2"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bill_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constrainedHeight="true"
+       app:layout_constraintBottom_toTopOf="@id/total_container"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#8A2BE2"
+        android:visibility="gone"
+       >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:weightSum="10"
+          android:orientation="horizontal"
+          >
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="5"
+              android:textSize="20sp"
+              android:textColor="@android:color/white"
+              android:text="Total(In Rupees)" />
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="5"
+              android:textColor="@android:color/white"
+              android:textSize="20sp"
+              android:gravity="right"
+              android:paddingRight="10dp"
+              android:id="@+id/total_expenses"
+              android:text="" />
+      </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+https://stackoverflow.com/questions/63555507/recyclerview-pushes-its-below-button-out-of-the-screen-in-constraintlayout
+https://stackoverflow.com/questions/63564754/positioning-a-button-under-a-recycler-view-in-constraint-layout
+-->
+
+<!--
+BackUP
+ <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bill_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+       app:layout_constraintBottom_toTopOf="@id/total_container"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_chainStyle="packed"
+
+
+
+        />
+
+         <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bill_rv"
+        android:background="#8A2BE2"
+        android:visibility="gone"
+       >
+
+-->

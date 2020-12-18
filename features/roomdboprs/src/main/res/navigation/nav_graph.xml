@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginRegistrationFragment">
+
+    <fragment
+        android:id="@+id/billListFragment"
+        android:name="com.ref.roomdboprs.views.BillListFragment"
+        android:label="fragment_bill_list"
+        tools:layout="@layout/fragment_bill_list" >
+        <action
+            android:id="@+id/action_billListFragment_to_addBillFragment"
+            app:destination="@id/addBillFragment" />
+        <action
+            android:id="@+id/action_billListFragment_to_editBillFragment"
+            app:destination="@id/editBillFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBillFragment"
+        android:name="com.ref.roomdboprs.views.AddBillFragment"
+        android:label="fragment_add_bill"
+        tools:layout="@layout/fragment_add_bill" />
+    <fragment
+        android:id="@+id/loginRegistrationFragment"
+        android:name="com.ref.roomdboprs.views.LoginRegistrationFragment"
+        android:label="fragment_login_registration"
+        tools:layout="@layout/fragment_login_registration" >
+        <action
+            android:id="@+id/action_loginRegistrationFragment_to_billListFragment"
+            app:destination="@id/billListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editBillFragment"
+        android:name="com.ref.roomdboprs.views.EditBillFragment"
+        android:label="fragment_edit_bill"
+        tools:layout="@layout/fragment_edit_bill" />
+</navigation>

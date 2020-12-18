@@ -4,13 +4,13 @@
     <data>
         <variable
             name="gituser"
-            type="com.ref.bindingfeature.databindingrecyclerview.model.GitUserModel.GitUserModelItem"/>
+            type="com.ref.bindingfeature.databindinglistdetailnetwork.model.GitUserModel.GitUserModelItem"/>
 
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".databindingrecyclerview.view.GitUserDetailFragment">
+    tools:context=".databindinglistdetailnetwork.view.GitUserDetailFragment">
 
 
     <ImageView

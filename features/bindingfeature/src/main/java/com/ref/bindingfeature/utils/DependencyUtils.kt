@@ -8,13 +8,7 @@ object DependencyUtils {
         var bindingList = mutableListOf<BindingModel>()
         var bindingModel = BindingModel("ViewBinding")
         bindingList.add(bindingModel)
-        bindingModel = BindingModel("DataBindingForm")
-        bindingList.add(bindingModel)
-        bindingModel = BindingModel("DataBindingList/Detail")
-        bindingList.add(bindingModel)
-        bindingModel = BindingModel("RoomDataBinding")
-        bindingList.add(bindingModel)
-        bindingModel = BindingModel("NetworkDataBindingList")
+        bindingModel = BindingModel("DataBindingList/Detail+Network")
         bindingList.add(bindingModel)
         return bindingList
     }

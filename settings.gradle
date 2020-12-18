@@ -1,3 +1,5 @@
+include ':features:roomdboprs'
+include ':roomdbopsfeature'
 include ':features:bindingfeature'
 include ':libraries:baseuilibrary'
 include ':features:mvvmfeature'

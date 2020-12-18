@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -54,7 +55,20 @@ dependencies {
     api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     //For viewModels
-     api "androidx.fragment:fragment-ktx:$fragment_version"
+    api "androidx.fragment:fragment-ktx:$fragment_version"
      api 'com.github.bumptech.glide:glide:4.11.0'
      annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+//CoRoutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    //RoomDB
+     api "androidx.room:room-runtime:$room_version"
+     kapt "androidx.room:room-compiler:$room_version"
+    // optional - Kotlin Extensions and Coroutines support for Room
+     api "androidx.room:room-ktx:$room_version"
+
+    // optional - Test helpers
+     api "androidx.room:room-testing:$room_version"
+
 }

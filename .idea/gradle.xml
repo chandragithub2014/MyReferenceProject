@@ -15,10 +15,12 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/bindingfeature" />
             <option value="$PROJECT_DIR$/features/mvvmfeature" />
+            <option value="$PROJECT_DIR$/features/roomdboprs" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/baselibrary" />
             <option value="$PROJECT_DIR$/libraries/baseuilibrary" />
             <option value="$PROJECT_DIR$/myreferenceapp" />
+            <option value="$PROJECT_DIR$/roomdbopsfeature" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

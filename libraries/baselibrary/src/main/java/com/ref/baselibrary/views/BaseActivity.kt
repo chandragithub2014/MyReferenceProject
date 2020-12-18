@@ -53,6 +53,12 @@ abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNaviga
                launchActivityWithAction<AppCompatActivity>("com.ref.bindingfeature.open")
                true
            }
+
+           R.id.room_db -> {
+               println("Clicked on RoomDB.....")
+               launchActivityWithAction<AppCompatActivity>("com.ref.roomdbops.open")
+               true
+           }
          /*  R.id.nav_price -> {
 
                val intent =
