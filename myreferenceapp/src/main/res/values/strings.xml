@@ -3,4 +3,5 @@
     <string name="title_bindingfeature">bindingfeature</string>
     <string name="title_roomdbopsfeature">roomdbops</string>
     <string name="title_roomdboprs">roomdboprs</string>
+    <string name="title_listtypes">listtypes</string>
 </resources>

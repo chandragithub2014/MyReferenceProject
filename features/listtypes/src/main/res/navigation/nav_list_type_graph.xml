@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_list_type_graph"
+    app:startDestination="@id/listTypesFragment">
+
+    <fragment
+        android:id="@+id/listTypesFragment"
+        android:name="com.ref.listtypes.views.ListTypesFragment"
+        android:label="fragment_list_types"
+        tools:layout="@layout/fragment_list_types" >
+        <action
+            android:id="@+id/action_listTypesFragment_to_expandableListFragment"
+            app:destination="@id/expandableListFragment" />
+        <action
+            android:id="@+id/action_listTypesFragment_to_sectionedListFragment"
+            app:destination="@id/sectionedListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expandableListFragment"
+        android:name="com.ref.listtypes.expandable.ExpandableListFragment"
+        android:label="fragment_expandable_list"
+        tools:layout="@layout/fragment_expandable_list" />
+    <fragment
+        android:id="@+id/sectionedListFragment"
+        android:name="com.ref.listtypes.sectioned.SectionedListFragment"
+        android:label="fragment_sectioned_list"
+        tools:layout="@layout/fragment_sectioned_list" />
+</navigation>

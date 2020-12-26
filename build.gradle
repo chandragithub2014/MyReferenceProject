@@ -20,7 +20,7 @@ buildscript {
     ext.google_play_version = '1.8.0'
     ext.recycler_view_version = '1.2.0-alpha06'
     ext.room_version = '2.2.5'
-    ext.nav_version = '2.3.1'
+    ext.nav_version = '2.3.2'
     repositories {
         google()
         jcenter()

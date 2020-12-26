@@ -1,0 +1,41 @@
+{
+  "countries": [
+    {
+      "country": "India",
+      "states": [
+        {"name": "Telangana", "capital": "Hyderabad"},
+        {"name": "AP", "capital": "Amaravathi"},
+        {"name": "Tamilnadu", "capital": "Chennai"},
+        {"name": "Karnataka", "capital": "Bengaluru"}
+      ]
+    },
+
+    {
+      "country": "America",
+      "states": [
+        {"name": "Alabama", "capital": "Montgomery"},
+        {"name": "Alaska", "capital": "Juneau"},
+        {"name": "Arizona", "capital": "Chennai"},
+        {"name": "Karnataka", "capital": "Bengaluru"}
+      ]
+    },
+
+    {
+      "country": "Australia",
+      "states": [
+        {"name": "Australian Capital Territory", "capital": "Canberra"},
+        {"name": "New South Wales", "capital": "Sydney"},
+        {"name": "Queensland", "capital": "Brisbane"},
+        {"name": "Victoria", "capital": "Melbourne"}
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+

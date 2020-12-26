@@ -59,6 +59,12 @@ abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNaviga
                launchActivityWithAction<AppCompatActivity>("com.ref.roomdbops.open")
                true
            }
+
+           R.id.list_types ->{
+               println("Clicked on List Types.....")
+               launchActivityWithAction<AppCompatActivity>("com.ref.listtypes.open")
+               true
+           }
          /*  R.id.nav_price -> {
 
                val intent =
