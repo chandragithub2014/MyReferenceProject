@@ -40,12 +40,29 @@ class CountryStateExpandableAdapter(var context: Context, var countryStateModelL
                         row.isExpanded = false
                         collapseRow(position)
                         holder.layout.setBackgroundColor(Color.WHITE)
+
+
                     }else{
+                        holder.layout.setBackgroundColor(Color.GRAY)
                         row.isExpanded = true
+                        holder.upArrowImg.visibility = View.VISIBLE
+                        holder.closeImage.visibility = View.GONE
                         expandRow(position)
                     }
                 }
+                holder.upArrowImg.setOnClickListener{
+                    if(row.isExpanded){
+                        row.isExpanded = false
+                        collapseRow(position)
+                        holder.layout.setBackgroundColor(Color.WHITE)
+                        holder.upArrowImg.visibility = View.GONE
+                        holder.closeImage.visibility = View.VISIBLE
+
+                    }
+                }
             }
+
+
             ExpandableCountryModel.CHILD -> {
                 (holder as CountryStateChildViewHolder).stateName.text = row.countryChild.name
                 holder.capitalImage.text = row.countryChild.capital
@@ -102,6 +119,7 @@ class CountryStateExpandableAdapter(var context: Context, var countryStateModelL
         internal var layout = itemView.country_item_parent_container
         internal var countryName : TextView = itemView.country_name
         internal var closeImage = itemView.close_arrow
+        internal var upArrowImg = itemView.up_arrow
 
     }
 
