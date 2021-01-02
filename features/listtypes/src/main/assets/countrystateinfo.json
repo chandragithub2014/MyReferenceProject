@@ -28,6 +28,18 @@
         {"name": "Queensland", "capital": "Brisbane"},
         {"name": "Victoria", "capital": "Melbourne"}
       ]
+    },
+    {
+      "country": "SouthAfrica",
+      "states": [
+        {"name": "Eastern Cape", "capital": "Bhisho"},
+        {"name": "Free State", "capital": "Bloemfontein"},
+        {"name": "Gauteng", "capital": "Johannesburg"},
+        {"name": "Western Cape", "capital": "Cape Town"},
+        {"name":  "Northern Cape", "capital": "Kimberley"},
+        {"name": "North West", "capital": "Mahikeng"},
+        {"name": "Mpumalanga", "capital": "Nelspruit"}
+      ]
     }
   ]
 }

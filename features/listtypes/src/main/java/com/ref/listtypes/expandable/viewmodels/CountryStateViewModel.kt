@@ -54,4 +54,16 @@ openShelfModel.add(
         }
          return expandableCountryModel
     }
+
+
+    fun prepareDataForSectionedAdapter(stateCapital: StateCapital) : MutableList<ExpandableCountryModel>{
+        var expandableCountryModel = mutableListOf<ExpandableCountryModel>()
+        for (states in stateCapital.countries) {
+            expandableCountryModel.add(ExpandableCountryModel(ExpandableCountryModel.PARENT,states))
+             for(capitals in states.states){
+                 expandableCountryModel.add(ExpandableCountryModel(ExpandableCountryModel.CHILD,capitals))
+             }
+        }
+        return expandableCountryModel
+    }
 }
