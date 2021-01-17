@@ -16,6 +16,7 @@ import com.ref.baselibrary.R
 import com.ref.baselibrary.navigator.launchActivityWithAction
 
 
+
 abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
     NavigationView.OnNavigationItemSelectedListener {
     private lateinit var installedModules: Set<String>
@@ -63,6 +64,21 @@ abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNaviga
            R.id.list_types ->{
                println("Clicked on List Types.....")
                launchActivityWithAction<AppCompatActivity>("com.ref.listtypes.open")
+               true
+           }
+           R.id.hilt_list -> {
+               println("Clicked on Hilt List......")
+               launchActivityWithAction<AppCompatActivity>("com.ref.hiltfeaturemodule.open")
+
+             /*  try {
+                  val intent = Intent(
+                       this,
+                       Class.forName("com.ref.hiltfeaturemodule.view.PostsHiltActivity")
+                   )
+                   startActivity(intent)
+               } catch (e: ClassNotFoundException) {
+                   e.printStackTrace()
+               }*/
                true
            }
          /*  R.id.nav_price -> {

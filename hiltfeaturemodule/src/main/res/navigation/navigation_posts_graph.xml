@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_posts_graph"
+    app:startDestination="@id/postsHiltFragment">
+
+    <fragment
+        android:id="@+id/postsHiltFragment"
+        android:name="com.ref.hiltfeaturemodule.view.PostsHiltFragment"
+        android:label="fragment_posts_hilt"
+        tools:layout="@layout/fragment_posts_hilt" />
+</navigation>

@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ref.hiltfeaturemodule">
+
+    <application>
+        <activity android:name="com.ref.hiltfeaturemodule.view.PostsHiltActivity">
+            <intent-filter>
+                <action android:name="com.ref.hiltfeaturemodule.open" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

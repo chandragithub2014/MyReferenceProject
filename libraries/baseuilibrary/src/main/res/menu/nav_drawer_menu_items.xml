@@ -11,11 +11,6 @@
             <item
                 android:id="@+id/nav_graph"
                 android:title="Navigation" />
-
-            <item
-                android:id="@+id/hilt_demo"
-                android:title="Hilt" />
-
             <item
                 android:id="@+id/coroutine_demo"
                 android:title="Coroutines" />
@@ -42,6 +37,15 @@
               android:id="@+id/list_types"
               android:title="List Types" />
       </menu>
+
+    </item>
+
+    <item android:title="Hilt">
+        <menu>
+            <item
+                android:id="@+id/hilt_list"
+                android:title="Hilt Demo" />
+        </menu>
 
     </item>
 </menu>

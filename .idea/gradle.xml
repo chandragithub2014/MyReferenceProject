@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/features/listtypes" />
             <option value="$PROJECT_DIR$/features/mvvmfeature" />
             <option value="$PROJECT_DIR$/features/roomdboprs" />
+            <option value="$PROJECT_DIR$/hiltfeaturemodule" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/baselibrary" />
             <option value="$PROJECT_DIR$/libraries/baseuilibrary" />
