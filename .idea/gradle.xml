@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/bindingfeature" />
+            <option value="$PROJECT_DIR$/features/fileuploader" />
             <option value="$PROJECT_DIR$/features/listtypes" />
             <option value="$PROJECT_DIR$/features/mvvmfeature" />
             <option value="$PROJECT_DIR$/features/roomdboprs" />

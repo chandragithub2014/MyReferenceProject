@@ -66,6 +66,11 @@ abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNaviga
                launchActivityWithAction<AppCompatActivity>("com.ref.listtypes.open")
                true
            }
+           R.id.file_upload -> {
+               println("Clicked on File Upload Types.....")
+               launchActivityWithAction<AppCompatActivity>("com.ref.fileuploader.open")
+               true
+           }
            R.id.hilt_list -> {
                println("Clicked on Hilt List......")
                launchActivityWithAction<AppCompatActivity>("com.ref.hiltfeaturemodule.open")

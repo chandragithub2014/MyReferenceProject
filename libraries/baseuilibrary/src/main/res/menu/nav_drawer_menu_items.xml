@@ -39,12 +39,30 @@
       </menu>
 
     </item>
+    <item android:title="FileUploader">
+        <menu>
+            <item
+                android:id="@+id/file_upload"
+                android:title="List Types" />
+        </menu>
+
+    </item>
 
     <item android:title="Hilt">
         <menu>
             <item
                 android:id="@+id/hilt_list"
                 android:title="Hilt Demo" />
+         <!--   <item
+                android:id="@+id/hilt_list_1"
+                android:title="Hilt Demo" />
+            <item
+                android:id="@+id/hilt_list_2"
+                android:title="Hilt Demo" />
+
+            <item
+                android:id="@+id/hilt_list_3"
+                android:title="Hilt Demo" />-->
         </menu>
 
     </item>

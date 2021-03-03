@@ -5,4 +5,5 @@
     <string name="title_roomdboprs">roomdboprs</string>
     <string name="title_listtypes">listtypes</string>
     <string name="title_hiltfeature">hiltfeature</string>
+    <string name="title_fileuploader">fileuploader</string>
 </resources>

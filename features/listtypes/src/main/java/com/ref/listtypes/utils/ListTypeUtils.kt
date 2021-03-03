@@ -10,6 +10,8 @@ object ListTypeUtils {
         listTypesList.add(listTypeModel)
         listTypeModel = ListTypeModel("SectionedRecyclerView")
         listTypesList.add(listTypeModel)
+        listTypeModel = ListTypeModel("InfiniteList")
+        listTypesList.add(listTypeModel)
         return listTypesList
     }
 }

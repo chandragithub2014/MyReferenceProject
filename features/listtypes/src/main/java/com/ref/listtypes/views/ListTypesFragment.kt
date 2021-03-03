@@ -118,6 +118,7 @@ class ListTypesFragment : Fragment() , ListTypeListener{
         when(listType){
             "ExpandableRecyclerView" -> findNavController().navigate(R.id.action_listTypesFragment_to_expandableListFragment)
             "SectionedRecyclerView" ->  findNavController().navigate(R.id.action_listTypesFragment_to_sectionedListFragment)
+            "InfiniteList" -> findNavController().navigate(R.id.action_listTypesFragment_to_infiniteListFragment2)
             else -> findNavController().navigate(R.id.action_listTypesFragment_to_expandableListFragment)
         }
     }
