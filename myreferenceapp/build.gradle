@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
@@ -29,7 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dynamicFeatures = [':features:mvvmfeature', ':features:bindingfeature', ':features:roomdboprs', ':features:listtypes', ':features:fileuploader']
+    dynamicFeatures = [':features:mvvmfeature', ':features:bindingfeature', ':features:roomdboprs', ':features:listtypes', ':features:fileuploader', ':features:firebaseoprs']
 }
 
 dependencies {
@@ -51,4 +51,13 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_dependencies"
     kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_dependencies"
 
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+
+    // Declare the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
 }
+
+apply plugin: 'com.google.gms.google-services'

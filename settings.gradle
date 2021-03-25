@@ -1,3 +1,4 @@
+include ':features:firebaseoprs'
 include ':features:fileuploader'
 include ':hiltfeaturemodule'
 include ':features:listtypes'

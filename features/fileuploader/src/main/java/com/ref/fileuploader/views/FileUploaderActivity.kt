@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
+import com.ref.baselibrary.navigator.launchActivity
 import com.ref.fileuploader.R
 import com.ref.fileuploader.extensions.UploadRequestBody
 import com.ref.fileuploader.extensions.getFileName
@@ -35,7 +36,8 @@ class FileUploaderActivity : AppCompatActivity() , UploadRequestBody.UploadCallb
                 Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)*/
-            openImageChooser()
+     //       openImageChooser()
+            radioButtonTestActivity()
         }
 
         upload_file_btn.setOnClickListener {
@@ -63,6 +65,7 @@ class FileUploaderActivity : AppCompatActivity() , UploadRequestBody.UploadCallb
             }
         }
     }
+
 
     private fun uploadImage() {
        /* if (selectedImageUri == null) {
@@ -132,6 +135,9 @@ class FileUploaderActivity : AppCompatActivity() , UploadRequestBody.UploadCallb
         progressBar_hori.progress = percentage
     }
 
+    private fun radioButtonTestActivity(){
+        launchActivity<RadioButtonTestActivity> {  }
+    }
 //https://www.simplifiedcoding.net/android-upload-file-to-server/
     //https://github.com/probelalkhan/android-upload-file-to-server/blob/master/app/build.gradle
 }

@@ -66,6 +66,10 @@ abstract class BaseActivity : AppCompatActivity(), BottomNavigationView.OnNaviga
                launchActivityWithAction<AppCompatActivity>("com.ref.listtypes.open")
                true
            }
+           R.id.firebase_oprs ->{
+               launchActivityWithAction<AppCompatActivity>("com.ref.firebaseoprs.open")
+               true
+           }
            R.id.file_upload -> {
                println("Clicked on File Upload Types.....")
                launchActivityWithAction<AppCompatActivity>("com.ref.fileuploader.open")

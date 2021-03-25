@@ -39,14 +39,24 @@
       </menu>
 
     </item>
+    <item android:title="FireBaseOperations">
+        <menu>
+            <item
+                android:id="@+id/firebase_oprs"
+                android:title="FireBase Flow" />
+        </menu>
+
+    </item>
     <item android:title="FileUploader">
         <menu>
             <item
                 android:id="@+id/file_upload"
-                android:title="List Types" />
+                android:title="File Upload" />
         </menu>
 
     </item>
+
+
 
     <item android:title="Hilt">
         <menu>
