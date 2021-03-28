@@ -58,6 +58,11 @@ ab@gmail.com/abcdef
             }
     }
 
+    override fun onBackPressed() {
+
+        super.onBackPressed()
+    }
+
     companion object {
         private val TAG = "FirebaseoprsActivity"
     }

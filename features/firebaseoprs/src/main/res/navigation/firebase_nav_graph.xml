@@ -13,9 +13,24 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_employeeTaxInfoFragment"
+            app:destination="@id/employeeTaxInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.ref.firebaseoprs.views.RegistrationFragment"
         android:label="RegistrationFragment" />
+    <fragment
+        android:id="@+id/employeeTaxInfoFragment"
+        android:name="com.ref.firebaseoprs.views.EmployeeTaxInfoFragment"
+        android:label="EmployeeTaxInfoFragment" >
+        <action
+            android:id="@+id/action_employeeTaxInfoFragment_to_employeeTaxEntryFragment"
+            app:destination="@id/employeeTaxEntryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeTaxEntryFragment"
+        android:name="com.ref.firebaseoprs.views.EmployeeTaxEntryFragment"
+        android:label="EmployeeTaxEntryFragment" />
 </navigation>

@@ -1,4 +1,10 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="tax_details_array">
+        <item>80C</item>
+        <item>HouseLoan</item>
+        <item>Telephone Bills</item>
+        <item>Education</item>
+    </string-array>
 </resources>
