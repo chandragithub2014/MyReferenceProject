@@ -83,6 +83,10 @@ class EmployeeTaxEntryFragment : Fragment() {
              }
         }
 
+        cancel_btn.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
     }
 
 
@@ -127,6 +131,7 @@ class EmployeeTaxEntryFragment : Fragment() {
                         }else{
                             println("Received upload URL is ${it.value}")
                             uploadedURL = it.value
+                            findNavController().popBackStack()
                         }
                     }
                     is ResultOf.Failure -> {

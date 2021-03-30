@@ -1,6 +1,9 @@
 package com.ref.firebaseoprs.views
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +14,17 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ref.baselibrary.dialogs.CustomAlertDialog
 import com.ref.baselibrary.dialogs.DialogListener
 import com.ref.baselibrary.dialogs.DialogModel
 import com.ref.baselibrary.responsehelper.ResultOf
 import com.ref.firebaseoprs.FirebaseoprsActivity
 import com.ref.firebaseoprs.R
+import com.ref.firebaseoprs.adapter.TaxInfoAdapter
+import com.ref.firebaseoprs.interfaces.ClickListener
+import com.ref.firebaseoprs.models.TaxInfo
 import com.ref.firebaseoprs.viewmodels.FireBaseViewModel
 import kotlinx.android.synthetic.main.fragment_employee_tax_info.*
 
@@ -30,12 +38,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [EmployeeTaxInfoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EmployeeTaxInfoFragment : Fragment() ,DialogListener{
+class EmployeeTaxInfoFragment : Fragment() ,DialogListener, ClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var  fireBaseViewModel: FireBaseViewModel
-
+    private var taxInfoAdapter : TaxInfoAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -64,15 +72,67 @@ class EmployeeTaxInfoFragment : Fragment() ,DialogListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
       val  empEmail = arguments?.getString("email","")
+        emp_email.text = empEmail
+        fetchTaxInfoListFromFireBase(emp_email.text.toString())
         launch_tax_new.setOnClickListener {
-findNavController().navigate(R.id.action_employeeTaxInfoFragment_to_employeeTaxEntryFragment,
-    bundleOf("email" to empEmail))
+          findNavController().navigate(R.id.action_employeeTaxInfoFragment_to_employeeTaxEntryFragment,
+          bundleOf("email" to empEmail))
         }
+        initAdapter()
+        observeTaxInfoList()
 
-        observeSignout()
+//        observeSignout()
 
     }
+   private fun fetchTaxInfoListFromFireBase(email : String){
+        if(!TextUtils.isEmpty(email)){
+            fireBaseViewModel.fetchEmpTaxDetails(email)
+        }
+   }
 
+    private fun observeTaxInfoList(){
+        fireBaseViewModel.taxInfoMutableLiveDataList.observe(viewLifecycleOwner, Observer {result ->
+            result?.let {
+                when(it){
+                    is ResultOf.Success ->{
+                         val response = it.value
+                        if(response.size > 0) {
+                            populateAdapter(response)
+                        }
+                    }
+                    is ResultOf.Failure -> {
+                        val failedMessage =  it.message ?: "Unknown Error"
+                        Toast.makeText(requireContext(),"Data fetch  failed $failedMessage", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        })
+    }
+
+    private fun initAdapter(){
+        taxInfoAdapter = TaxInfoAdapter(requireContext(), mutableListOf())
+
+        taxInfoAdapter?.let {
+            val layoutManager = LinearLayoutManager(context)
+            emp_list.layoutManager = layoutManager
+            emp_list.adapter = it
+            emp_list.addItemDecoration(
+                DividerItemDecoration(
+                    this.context,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+            it.notifyDataSetChanged()
+        }
+    }
+
+    private fun populateAdapter(taxInfoList : MutableList<TaxInfo>){
+        taxInfoAdapter?.let {
+            it.setData(taxInfoList)
+           it.setInterface(this)
+            it.notifyDataSetChanged()
+        }
+    }
     private fun observeSignout(){
         fireBaseViewModel.signOutStatus.observe(viewLifecycleOwner, Observer { result ->
             result?.let {
@@ -134,5 +194,10 @@ findNavController().navigate(R.id.action_employeeTaxInfoFragment_to_employeeTaxE
 
     private fun showCustomAlertDialog(dialogModel: DialogModel){
         CustomAlertDialog.showAlertDialog(dialogModel,this)
+    }
+
+    override fun onPdfClicked(imageURL: String) {
+        val  intent =  Intent(Intent.ACTION_VIEW, Uri.parse(imageURL))
+        startActivity(intent)
     }
 }

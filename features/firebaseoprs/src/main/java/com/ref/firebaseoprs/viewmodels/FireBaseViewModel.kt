@@ -1,6 +1,7 @@
 package com.ref.firebaseoprs.viewmodels
 
 import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.lifecycle.*
@@ -35,6 +36,7 @@ class FireBaseViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel
         storageReference = storage.reference
         rootNode = FirebaseDatabase.getInstance()
         reference = rootNode.getReference("taxInfo")
+        loading.postValue(false)
 
     }
     private val _registrationStatus = MutableLiveData<ResultOf<String>>()
@@ -230,6 +232,61 @@ class FireBaseViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel
            }
        }
    }
+    private val _taxInfoMutableLiveDataList = MutableLiveData<ResultOf<MutableList<TaxInfo>>>()
+    val taxInfoMutableLiveDataList: LiveData<ResultOf<MutableList<TaxInfo>>> = _taxInfoMutableLiveDataList
+    fun fetchEmpTaxDetails(email: String) {
+        loading.postValue(true)
+        var taxInfoList = mutableListOf<TaxInfo>()
+        viewModelScope.launch(dispatcher) {
+            var errorCode = -1
+            try {
+                var checkUser: Query = reference.orderByChild("employeeEmail").equalTo(email)
+
+                checkUser.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        for (postSnapshot in dataSnapshot.children) {
+                            val taxInfo= postSnapshot.getValue(TaxInfo::class.java)
+                            if (taxInfo != null) {
+                                taxInfoList.add(taxInfo)
+                            }
+                        }
+                        _taxInfoMutableLiveDataList.postValue(ResultOf.Success(taxInfoList))
+
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) {
+                        // Getting Post failed, log a message
+                        Log.w("FireBaseViewModel", "loadPost:onCancelled", databaseError.toException())
+                        _taxInfoMutableLiveDataList.postValue(ResultOf.Failure("Failed with Error Code ${errorCode} ", databaseError.toException()))
+                        loading.postValue(false)
+                        // ...
+                    }
+                })
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                loading.postValue(false)
+                if (errorCode != -1) {
+                    _saveResult.postValue(
+                        ResultOf.Failure(
+                            "Failed with Error Code ${errorCode} ",
+                            e
+                        )
+                    )
+                } else {
+                    _saveResult.postValue(
+                        ResultOf.Failure(
+                            "Failed with Exception ${e.message} ",
+                            e
+                        )
+                    )
+                }
+
+
+            }
+
+        }
+    }
 
     fun fetchLoading():LiveData<Boolean> = loading
 
